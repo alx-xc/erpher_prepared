@@ -1,4 +1,4 @@
-%% script generated at {2013,4,26} {17,23,2}
+%% script generated at {2013,4,29} {13,11,6}
 {script,
     {"start_clean",[]},
     [{preLoaded,
@@ -113,7 +113,7 @@
           sockjs_json,sockjs_multiplex,sockjs_multiplex_channel,
           sockjs_service,sockjs_session,sockjs_session_sup,sockjs_util,
           sockjs_ws_handler]},
-     {path,["$ROOT/lib/erpher_rt_stat-0.0.5/ebin"]},
+     {path,["$ROOT/lib/erpher_rt_stat-0.0.6/ebin"]},
      {primLoad,
          [erpher_rt_stat,erpher_rt_stat_app,erpher_rt_stat_conf,
           erpher_rt_stat_info,erpher_rt_stat_sup,erpher_rt_stat_web_handler]},
@@ -349,7 +349,7 @@
           "$ROOT/lib/cowboy-0.6.1/ebin","$ROOT/lib/crypto-2.2/ebin",
           "$ROOT/lib/inets-5.9.2/ebin","$ROOT/lib/public_key-0.17/ebin",
           "$ROOT/lib/ssl-5.1.2/ebin","$ROOT/lib/sockjs-0.3.4/ebin",
-          "$ROOT/lib/erpher_rt_stat-0.0.5/ebin","$ROOT/lib/ecomet-1.6.7/ebin",
+          "$ROOT/lib/erpher_rt_stat-0.0.6/ebin","$ROOT/lib/ecomet-1.6.7/ebin",
           "$ROOT/lib/eworkman-1.2.3/ebin","$ROOT/lib/ejobman-2.3.9/ebin",
           "$ROOT/lib/erpher_lib-1.6.6/ebin","$ROOT/lib/et-1.4.4.2/ebin",
           "$ROOT/lib/eunit-2.2.3/ebin","$ROOT/lib/gs-1.5.15.1/ebin",
@@ -636,7 +636,7 @@
          {application,load,
              [{application,erpher_rt_stat,
                   [{description,"erpher runtime statistic"},
-                   {vsn,"0.0.5"},
+                   {vsn,"0.0.6"},
                    {id,"erpher_rt_stat"},
                    {modules,
                        [erpher_rt_stat_app,erpher_rt_stat_conf,erpher_rt_stat,
