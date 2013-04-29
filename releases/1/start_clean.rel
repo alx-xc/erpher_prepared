@@ -1,4 +1,4 @@
-%% rel generated at {2013,4,18} {17,56,51}
+%% rel generated at {2013,4,29} {13,21,20}
 {release,{"start_clean",[]},
          {erts,"5.9.3.1"},
          [{kernel,"2.15.3"},
@@ -13,8 +13,8 @@
           {public_key,"0.17",load},
           {ssl,"5.1.2",load},
           {sockjs,"0.3.4",load},
-          {erpher_rt_stat,"0.0.5",load},
-          {ecomet,"1.6.6",load},
+          {erpher_rt_stat,"0.0.6",load},
+          {ecomet,"1.6.7",load},
           {eworkman,"1.2.3",load},
           {ejobman,"2.3.9",load},
           {erpher_lib,"1.6.6",load},
