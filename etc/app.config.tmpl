@@ -1,4 +1,22 @@
 [
+    {rabbitmq_shovel,
+        [ {shovels, [ {tomcat,
+            [ {sources,
+                [ {broker, ""},
+                  {declarations, []}
+                ]}
+            , {destinations,
+                [ {broker, "amqp://guest:guest@e-comet2.megaplan.ru/"}, % "amqp://erpher:dei9Eesh@e-comet.megaplan.ru/"
+                  {declarations, []}
+                ]}
+            , {queue, <<>>}
+            , {prefetch_count, 10}
+            , {ack_mode, on_confirm}
+            , {publish_properties, [ {delivery_mode, 2} ]}
+            , {reconnect_delay, 5}
+            ]}
+        ]}
+    ]},
     {rabbit, [
         {tcp_listeners,[5672]},
         {log_levels, [{connection, warning}]},
@@ -62,6 +80,10 @@
                 ],
                 [
                     {name, <<"bums.common.import">>},
+                    {max_children, 4}
+                ],
+                [
+                    {name, <<"extSubscription">>},
                     {max_children, 4}
                 ]
             ]},
