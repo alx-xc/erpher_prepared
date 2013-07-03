@@ -45,7 +45,12 @@ ERTS_VSN=${START_ERL% *}
 APP_VSN=${START_ERL#* }
 
 # Add ERTS bin dir to our path
-ERTS_PATH=$RUNNER_BASE_DIR/erts-$ERTS_VSN/bin
+ERTS_PATH=`grep '^-erts ' $RUNNER_ETC_DIR/vm.args`
+if [ -z "$ERTS_PATH" ]; then
+    ERTS_PATH=$RUNNER_BASE_DIR/erts-$ERTS_VSN/bin
+else
+    ERTS_PATH=`echo $ERTS_PATH | sed 's/-erts //'`/bin
+fi
 
 # Setup command to control the node
 NODETOOL="$ERTS_PATH/escript $ERTS_PATH/nodetool $NAME_ARG $COOKIE_ARG"
@@ -144,7 +149,7 @@ case "$1" in
         esac
         # Setup beam-required vars
         ROOTDIR=$RUNNER_BASE_DIR
-        BINDIR=$ROOTDIR/erts-$ERTS_VSN/bin
+        BINDIR=$ERTS_PATH
         EMU=beam
         PROGNAME=`echo $0 | sed 's/.*\\///'`
         CMD="$BINDIR/erlexec -boot $RUNNER_BASE_DIR/releases/$APP_VSN/$BOOTFILE -mode embedded -config $RUNNER_ETC_DIR/app.config -args_file $RUNNER_ETC_DIR/vm.args -- ${1+"$@"}"

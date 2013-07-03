@@ -63,6 +63,10 @@
                 [
                     {name, <<"bums.common.import">>},
                     {max_children, 4}
+                ],
+                [
+                    {name, <<"extSubscription">>},
+                    {max_children, 4}
                 ]
             ]},
             {schema_rewrite, [
@@ -102,7 +106,7 @@
                     {handler_job, 2},
                     {msg, 1},
                     {run, 2},
-                    {job, 0}, % 3 for log params, 5 for log auth data
+                    {job, 0}, % 3 for log params, 5 for log auth data, 0 for production
                     {job_result, 1},
                     {job_queue, 2},
                     {http, 3},
