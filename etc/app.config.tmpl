@@ -1,22 +1,4 @@
 [
-    {rabbitmq_shovel,
-        [ {shovels, [ {tomcat,
-            [ {sources,
-                [ {broker, ""},
-                  {declarations, []}
-                ]}
-            , {destinations,
-                [ {broker, "amqp://guest:guest@e-comet2.megaplan.ru/"}, % "amqp://erpher:dei9Eesh@e-comet.megaplan.ru/"
-                  {declarations, []}
-                ]}
-            , {queue, <<>>}
-            , {prefetch_count, 10}
-            , {ack_mode, on_confirm}
-            , {publish_properties, [ {delivery_mode, 2} ]}
-            , {reconnect_delay, 5}
-            ]}
-        ]}
-    ]},
     {rabbit, [
         {tcp_listeners,[5672]},
         {log_levels, [{connection, warning}]},
@@ -124,7 +106,7 @@
                     {handler_job, 2},
                     {msg, 1},
                     {run, 2},
-                    {job, 0}, % 3 for log params, 5 for log auth data
+                    {job, 0}, % 3 for log params, 5 for log auth data, 0 for production
                     {job_result, 1},
                     {job_queue, 2},
                     {http, 3},
