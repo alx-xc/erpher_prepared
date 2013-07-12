@@ -1,4 +1,4 @@
-%% script generated at {2013,7,3} {19,40,13}
+%% script generated at {2013,7,12} {15,28,4}
 {script,
     {"start_clean",[]},
     [{preLoaded,
@@ -131,7 +131,7 @@
           eworkman_long_worker,eworkman_sup,eworkman_worker_misc,
           eworkman_worker_spawn,eworkman_worker_web,
           eworkman_worker_web_handler,eworkman_worker_web_page]},
-     {path,["$ROOT/lib/ejobman-2.3.11/ebin"]},
+     {path,["$ROOT/lib/ejobman-2.3.12/ebin"]},
      {primLoad,
          [ejobman_app,ejobman_child,ejobman_child_sup,ejobman_clean,
           ejobman_conf,ejobman_conf_rabbit,ejobman_data,ejobman_group_handler,
@@ -351,7 +351,7 @@
           "$ROOT/lib/inets-5.9.2/ebin","$ROOT/lib/public_key-0.17/ebin",
           "$ROOT/lib/ssl-5.1.2/ebin","$ROOT/lib/sockjs-0.3.4/ebin",
           "$ROOT/lib/erpher_rt_stat-0.0.7/ebin","$ROOT/lib/ecomet-1.7.1/ebin",
-          "$ROOT/lib/eworkman-1.2.3/ebin","$ROOT/lib/ejobman-2.3.11/ebin",
+          "$ROOT/lib/eworkman-1.2.3/ebin","$ROOT/lib/ejobman-2.3.12/ebin",
           "$ROOT/lib/erpher_lib-1.6.8/ebin","$ROOT/lib/et-1.4.4.2/ebin",
           "$ROOT/lib/eunit-2.2.3/ebin","$ROOT/lib/gs-1.5.15.1/ebin",
           "$ROOT/lib/mnesia-4.7.1/ebin","$ROOT/lib/observer-1.2/ebin",
@@ -695,7 +695,7 @@
          {application,load,
              [{application,ejobman,
                   [{description,"ejobman"},
-                   {vsn,"2.3.11"},
+                   {vsn,"2.3.12"},
                    {id,"ejobman"},
                    {modules,
                        [ejobman_app,ejobman_child,ejobman_child_sup,

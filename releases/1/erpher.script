@@ -1,4 +1,4 @@
-%% script generated at {2013,7,3} {19,40,13}
+%% script generated at {2013,7,12} {15,28,4}
 {script,
     {"erpher","1"},
     [{preLoaded,
@@ -137,7 +137,7 @@
           core_pp,core_scan,erl_bifs,rec_env,sys_core_dsetel,sys_core_fold,
           sys_core_inline,sys_expand_pmod,sys_pre_attributes,sys_pre_expand,
           v3_codegen,v3_core,v3_kernel,v3_kernel_pp,v3_life]},
-     {path,["$ROOT/lib/ejobman-2.3.11/ebin"]},
+     {path,["$ROOT/lib/ejobman-2.3.12/ebin"]},
      {primLoad,
          [ejobman_app,ejobman_child,ejobman_child_sup,ejobman_clean,
           ejobman_conf,ejobman_conf_rabbit,ejobman_data,ejobman_group_handler,
@@ -352,7 +352,7 @@
           "$ROOT/lib/ecomet-1.7.1/ebin","$ROOT/lib/eworkman-1.2.3/ebin",
           "$ROOT/lib/amqp_client-3.1.0/ebin","$ROOT/lib/appmon-2.1.14.1/ebin",
           "$ROOT/lib/asn1-1.8/ebin","$ROOT/lib/compiler-4.8.2/ebin",
-          "$ROOT/lib/ejobman-2.3.11/ebin","$ROOT/lib/erpher_lib-1.6.8/ebin",
+          "$ROOT/lib/ejobman-2.3.12/ebin","$ROOT/lib/erpher_lib-1.6.8/ebin",
           "$ROOT/lib/et-1.4.4.2/ebin","$ROOT/lib/eunit-2.2.3/ebin",
           "$ROOT/lib/gs-1.5.15.1/ebin","$ROOT/lib/mnesia-4.7.1/ebin",
           "$ROOT/lib/observer-1.2/ebin","$ROOT/lib/os_mon-2.2.10/ebin",
@@ -716,7 +716,7 @@
          {application,load,
              [{application,ejobman,
                   [{description,"ejobman"},
-                   {vsn,"2.3.11"},
+                   {vsn,"2.3.12"},
                    {id,"ejobman"},
                    {modules,
                        [ejobman_app,ejobman_child,ejobman_child_sup,
