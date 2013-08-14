@@ -199,8 +199,8 @@
             ]
         },
         {auth, [
-            {http_connect_timeout, 10000},
-            {http_timeout, 30000},
+            {http_connect_timeout, 5000},
+            {http_timeout, 10000},
             {use_cache, true},
             {cache_lt, 300}, % cache lifetime, s
             {cache_gc_interval, 600} % interval for running garbage collector, s
@@ -242,12 +242,14 @@
         {web_server, [
             {port, 8143}
         ]},
+        {jit_log, false}, % enable jit log
         {stat_limit_n, 101}, % amount
         {stat_limit_t, 123}, % seconds
         {stat_limit_cnt_h, 26}, % hours
         {stat_limit_cnt_m, 62}, % minutes
+        {storage_on, false},
         {storage_base, "%ROOT%/var/lib/erpher/estat/es"},
-        {rt_info_file, "%ROOT%/var/lib/erpher/rt_info.dat"},
+%        {rt_info_file, "%ROOT%/var/lib/erpher/rt_info.dat"},
         {keep_time, 72}, % hours
         {rotate_interval, hour},
         {flush_interval, 60}, % seconds
