@@ -1,4 +1,4 @@
-%% script generated at {2013,8,14} {16,52,20}
+%% script generated at {2013,8,16} {14,4,16}
 {script,
     {"erpher","1"},
     [{preLoaded,
@@ -105,7 +105,7 @@
           eworkman_long_worker,eworkman_sup,eworkman_worker_misc,
           eworkman_worker_spawn,eworkman_worker_web,
           eworkman_worker_web_handler,eworkman_worker_web_page]},
-     {path,["$ROOT/lib/ejobman-2.3.15/ebin"]},
+     {path,["$ROOT/lib/ejobman-2.4.1/ebin"]},
      {primLoad,
          [ejobman_app,ejobman_child,ejobman_child_sup,ejobman_clean,
           ejobman_conf,ejobman_conf_rabbit,ejobman_data,ejobman_group_handler,
@@ -350,7 +350,7 @@
           "$ROOT/lib/ssl-5.1.2/ebin","$ROOT/lib/sockjs-0.3.4/ebin",
           "$ROOT/lib/cowboy-0.6.1/ebin","$ROOT/lib/erpher_rt_stat-0.0.8/ebin",
           "$ROOT/lib/ecomet-1.7.3/ebin","$ROOT/lib/eworkman-1.2.3/ebin",
-          "$ROOT/lib/ejobman-2.3.15/ebin","$ROOT/lib/amqp_client-3.1.0/ebin",
+          "$ROOT/lib/ejobman-2.4.1/ebin","$ROOT/lib/amqp_client-3.1.0/ebin",
           "$ROOT/lib/appmon-2.1.14.1/ebin","$ROOT/lib/asn1-1.8/ebin",
           "$ROOT/lib/compiler-4.8.2/ebin","$ROOT/lib/erpher_lib-1.6.8/ebin",
           "$ROOT/lib/et-1.4.4.2/ebin","$ROOT/lib/eunit-2.2.3/ebin",
@@ -637,7 +637,7 @@
          {application,load,
              [{application,ejobman,
                   [{description,"ejobman"},
-                   {vsn,"2.3.15"},
+                   {vsn,"2.4.1"},
                    {id,"ejobman"},
                    {modules,
                        [ejobman_app,ejobman_child,ejobman_child_sup,
