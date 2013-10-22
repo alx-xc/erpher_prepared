@@ -47,6 +47,7 @@
             {http_connect_timeout, 15001},
             {http_timeout, 3600001},
             {max_children, 4}, % default group
+            {error_mail, [<<"bums-error@megoplan.ru">>]},
             {job_groups, [
                 [
                     {name, <<"sdf.reminder">>},
@@ -58,7 +59,8 @@
                 ],
                 [
                     {name, <<"bums.staff.updateSubordination">>},
-                    {max_children, 1}
+                    {max_children, 1},
+                    {retry, true}
                 ],
                 [
                     {name, <<"bums.common.import">>},
@@ -68,6 +70,11 @@
                     {name, <<"extSubscription">>},
                     {max_children, 4}
                 ]
+%                [
+%                    {name, <<"delay_30">>},
+%                    {max_children, 2},
+%                    {delay, 900}
+%                ]
             ]},
             {schema_rewrite, [
 %                [
@@ -194,7 +201,7 @@
         {log0, "%ROOT%/var/log/erpher/e"},
         {debug, [
                 {child, 1},
-                {http, 1},
+                {http, 3},
                 {run, 1}
             ]
         },
