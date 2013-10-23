@@ -47,6 +47,7 @@
             {http_connect_timeout, 15001},
             {http_timeout, 3600001},
             {max_children, 4}, % default group
+            {error_mail, [<<"bums-error@megoplan.ru">>]},
             {job_groups, [
                 [
                     {name, <<"sdf.reminder">>},
