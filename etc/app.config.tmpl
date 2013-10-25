@@ -47,6 +47,7 @@
             {http_connect_timeout, 15001},
             {http_timeout, 3600001},
             {max_children, 4}, % default group
+            {error_mail, [<<"bums-error@megoplan.ru">>]},
             {job_groups, [
                 [
                     {name, <<"sdf.reminder">>},
@@ -58,7 +59,8 @@
                 ],
                 [
                     {name, <<"bums.staff.updateSubordination">>},
-                    {max_children, 1}
+                    {max_children, 1},
+                    {retry, true}
                 ],
                 [
                     {name, <<"bums.common.import">>},
@@ -68,6 +70,11 @@
                     {name, <<"extSubscription">>},
                     {max_children, 4}
                 ]
+%                [
+%                    {name, <<"delay_30">>},
+%                    {max_children, 2},
+%                    {delay, 900}
+%                ]
             ]},
             {schema_rewrite, [
 %                [
@@ -194,13 +201,13 @@
         {log0, "%ROOT%/var/log/erpher/e"},
         {debug, [
                 {child, 1},
-                {http, 1},
+                {http, 3},
                 {run, 1}
             ]
         },
         {auth, [
-            {http_connect_timeout, 10000},
-            {http_timeout, 30000},
+            {http_connect_timeout, 5000},
+            {http_timeout, 10000},
             {use_cache, true},
             {cache_lt, 300}, % cache lifetime, s
             {cache_gc_interval, 600} % interval for running garbage collector, s
@@ -242,12 +249,14 @@
         {web_server, [
             {port, 8143}
         ]},
+        {jit_log, false}, % enable jit log
         {stat_limit_n, 101}, % amount
         {stat_limit_t, 123}, % seconds
         {stat_limit_cnt_h, 26}, % hours
         {stat_limit_cnt_m, 62}, % minutes
+        {storage_on, false},
         {storage_base, "%ROOT%/var/lib/erpher/estat/es"},
-        {rt_info_file, "%ROOT%/var/lib/erpher/rt_info.dat"},
+%        {rt_info_file, "%ROOT%/var/lib/erpher/rt_info.dat"},
         {keep_time, 72}, % hours
         {rotate_interval, hour},
         {flush_interval, 60}, % seconds
