@@ -9,7 +9,8 @@ RUNNER_ETC_DIR=$RUNNER_BASE_DIR/etc
 RUNNER_LOG_DIR=$RUNNER_BASE_DIR/log
 # Note the trailing slash on $PIPE_DIR/
 PIPE_DIR=$RUNNER_BASE_DIR/tmp/
-RUNNER_USER=erpher
+
+#RUNNER_USER=erpher
 
 # Make sure this script is running as the appropriate user
 if [ ! -z "$RUNNER_USER" ] && [ `whoami` != "$RUNNER_USER" ]; then
