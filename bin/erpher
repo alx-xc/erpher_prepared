@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # -*- tab-width:4;indent-tabs-mode:nil -*-
 # ex: ts=4 sw=4 et
 
@@ -9,7 +9,8 @@ RUNNER_ETC_DIR=$RUNNER_BASE_DIR/etc
 RUNNER_LOG_DIR=$RUNNER_BASE_DIR/log
 # Note the trailing slash on $PIPE_DIR/
 PIPE_DIR=$RUNNER_BASE_DIR/tmp/
-RUNNER_USER=erpher
+
+#RUNNER_USER=erpher
 
 # Make sure this script is running as the appropriate user
 if [ ! -z "$RUNNER_USER" ] && [ `whoami` != "$RUNNER_USER" ]; then
@@ -21,6 +22,14 @@ cd $RUNNER_BASE_DIR
 
 # Make sure log directory exists
 mkdir -p $RUNNER_LOG_DIR
+
+if [ ! -f $RUNNER_ETC_DIR/vm.args ]; then
+    cp $RUNNER_ETC_DIR/vm.args.tmpl $RUNNER_ETC_DIR/vm.args
+fi
+
+if [ ! -f $RUNNER_ETC_DIR/app.config ]; then
+    cp $RUNNER_ETC_DIR/app.config.tmpl $RUNNER_ETC_DIR/app.config
+fi
 
 # Extract the target node name from node.args
 NAME_ARG=`egrep '^-s?name' $RUNNER_ETC_DIR/vm.args`
@@ -49,7 +58,12 @@ ERTS_PATH=`grep '^-erts ' $RUNNER_ETC_DIR/vm.args`
 if [ -z "$ERTS_PATH" ]; then
     ERTS_PATH=$RUNNER_BASE_DIR/erts-$ERTS_VSN/bin
 else
-    ERTS_PATH=`echo $ERTS_PATH | sed 's/-erts //'`/bin
+    echo "$ERTS_PATH" | grep '*' > /dev/null
+    if [ $? == 0 ]; then
+        ERTS_ERLANG_VSN=$(erl -version 2>&1 | sed 's/^.*version \([0-9\.]*\).*$/\1/')
+        ERTS_PATH=$(echo "$ERTS_PATH" | sed "s/\*/$ERTS_ERLANG_VSN/")
+    fi
+    ERTS_PATH=`echo "$ERTS_PATH" | sed 's/-erts //'`/bin
 fi
 
 # Setup command to control the node

@@ -8,22 +8,22 @@
     {kernel, [
         {inet_default_listen_options, [{nodelay,true}]},
         {inet_default_connect_options, [{nodelay,true}]},
-        {error_logger, {file,"%ROOT%/var/log/erpher/kernel.log"}}
+        {error_logger, {file,"var/log/erpher/kernel.log"}}
     ]},
     {mnesia, [
-        {dir, "%ROOT%/var/lib/erpher/mnesia/rabbit-erpher"}
+        {dir, "var/lib/erpher/mnesia/rabbit-erpher"}
     ]},
     {sasl, [
-        {sasl_error_logger, {file,"%ROOT%/var/log/erpher/sasl.log"}},
+        {sasl_error_logger, {file,"var/log/erpher/sasl.log"}},
         {errlog_type, error}
-%        {error_logger_mf_dir, "%ROOT%/var/log/erpher/sasl"},      % Log directory
+%        {error_logger_mf_dir, "var/log/erpher/sasl"},      % Log directory
 %        {error_logger_mf_maxbytes, 10485760},   % 10 MB max file size
 %        {error_logger_mf_maxfiles, 5}           % 5 files max
     ]},
     {ejobman, [
         {temp_rt_key_for_group, <<"new">>},
         % log is common and may also be defined in eworkman
-        {log0, "%ROOT%/var/log/erpher/ej"},
+        {log0, "var/log/erpher/ej"},
         {pid_file0, "/var/run/erpher/erpher.pid"},
         {debug, [
                 {msg, 0},
@@ -47,7 +47,7 @@
             {http_connect_timeout, 15001},
             {http_timeout, 3600001},
             {max_children, 4}, % default group
-            {error_mail, [<<"bums-error@megoplan.ru">>]},
+%            {error_mail, [<<"mail@example.test">>]},
             {job_groups, [
                 [
                     {name, <<"sdf.reminder">>},
@@ -122,7 +122,7 @@
             ]}
         ]},
         {handler, [
-            {job_log0, "%ROOT%/var/log/erpher/job"},
+            {job_log0, "var/log/erpher/job"},
             % never | minute | hour | day | {dow, 0..7} | month | year
             {job_log_rotate, day},
             {debug,
@@ -150,7 +150,7 @@
         ]},
         {delay_for_log0, 10}, % ms. Start delay for ejobman to create a log
         % log is common and may also be defined in ejobman
-        {log, "%ROOT%/var/log/erpher/ew"},
+        {log, "var/log/erpher/ew"},
         % never | minute | hour | day | {dow, 0..7} | month | year
         {log_rotate, day},
         {pid_file, "/var/run/erpher/erpher.pid"},
@@ -198,7 +198,7 @@
                 {max_connections, 10000}
                 ]
         },
-        {log0, "%ROOT%/var/log/erpher/e"},
+        {log0, "var/log/erpher/e"},
         {debug, [
                 {child, 1},
                 {http, 3},
@@ -255,8 +255,8 @@
         {stat_limit_cnt_h, 26}, % hours
         {stat_limit_cnt_m, 62}, % minutes
         {storage_on, false},
-        {storage_base, "%ROOT%/var/lib/erpher/estat/es"},
-%        {rt_info_file, "%ROOT%/var/lib/erpher/rt_info.dat"},
+        {storage_base, "var/lib/erpher/estat/es"},
+%        {rt_info_file, "var/lib/erpher/rt_info.dat"},
         {keep_time, 72}, % hours
         {rotate_interval, hour},
         {flush_interval, 60}, % seconds
