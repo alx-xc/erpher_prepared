@@ -1,4 +1,4 @@
-%% script generated at {2014,2,12} {15,39,38}
+%% script generated at {2014,2,12} {20,23,4}
 {script,
     {"erpher","1"},
     [{preLoaded,
@@ -91,7 +91,7 @@
      {primLoad,
          [erpher_rt_stat,erpher_rt_stat_app,erpher_rt_stat_conf,
           erpher_rt_stat_info,erpher_rt_stat_sup,erpher_rt_stat_web_handler]},
-     {path,["$ROOT/lib/ecomet-1.8.0/ebin"]},
+     {path,["$ROOT/lib/ecomet-1.8.1/ebin"]},
      {primLoad,
          [ecomet_auth_server,ecomet_conf,ecomet_conf_rabbit,
           ecomet_conn_server,ecomet_conn_server_sio,ecomet_conn_server_sjs,
@@ -349,7 +349,7 @@
           "$ROOT/lib/crypto-2.2/ebin","$ROOT/lib/public_key-0.17/ebin",
           "$ROOT/lib/ssl-5.1.2/ebin","$ROOT/lib/sockjs-0.3.4/ebin",
           "$ROOT/lib/cowboy-0.6.1/ebin","$ROOT/lib/erpher_rt_stat-0.0.8/ebin",
-          "$ROOT/lib/ecomet-1.8.0/ebin","$ROOT/lib/eworkman-1.2.3/ebin",
+          "$ROOT/lib/ecomet-1.8.1/ebin","$ROOT/lib/eworkman-1.2.3/ebin",
           "$ROOT/lib/ejobman-2.4.2/ebin","$ROOT/lib/amqp_client-3.1.5/ebin",
           "$ROOT/lib/appmon-2.1.14.1/ebin","$ROOT/lib/asn1-1.8/ebin",
           "$ROOT/lib/compiler-4.8.2/ebin","$ROOT/lib/erpher_lib-1.6.9/ebin",
@@ -596,7 +596,7 @@
          {application,load,
              [{application,ecomet,
                   [{description,"ecomet server"},
-                   {vsn,"1.8.0"},
+                   {vsn,"1.8.1"},
                    {id,"ecomet"},
                    {modules,
                        [ecomet_conf,ecomet_conf_rabbit,ecomet_conn_server,

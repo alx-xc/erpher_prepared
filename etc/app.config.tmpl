@@ -220,6 +220,7 @@
             {auth_recheck_interval, 121}, % seconds
             {qmax_dur, 600200100}, % microseconds
             {qmax_len, 500},
+            {possible_push_keys, <<"^cspush_">>}, % pattern of possible routing keys for socket to amqp push
             {cookie_matcher, [<<"ID">>]}, % pattern for filtering cookies ([<<"SID">>], [<<"SID">>, <<"COOKIEID">>])
             {debug, [
                     {stat, 0},
