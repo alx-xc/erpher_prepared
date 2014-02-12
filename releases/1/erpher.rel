@@ -1,4 +1,4 @@
-%% rel generated at {2013,12,31} {16,2,25}
+%% rel generated at {2014,2,12} {15,27,17}
 {release,{"erpher","1"},
          {erts,"5.9.3.1"},
          [{kernel,"2.15.3"},
@@ -14,7 +14,7 @@
           {sockjs,"0.3.4"},
           {cowboy,"0.6.1"},
           {erpher_rt_stat,"0.0.8"},
-          {ecomet,"1.7.6"},
+          {ecomet,"1.8.0"},
           {eworkman,"1.2.3"},
           {ejobman,"2.4.2"},
           {amqp_client,"3.1.5",load},
