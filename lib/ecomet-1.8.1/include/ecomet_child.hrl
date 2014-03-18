@@ -16,7 +16,8 @@
     auth_last = {0,0,0},
     auth_recheck = ?AUTH_RECHECK_INTERVAL,
     auth = #auth_data{},
-    cookie_matcher,
+    possible_push_keys :: binary, % pattern of possible routing keys for socket to amqp push
+    cookie_matcher :: list, % pattern for filtering cookies ([<<"SID">>], [<<"SID">>, <<"COOKIEID">>])
     sjs_sid,
     sjs_conn,
     clients = [], % in case of many requests with the very same id (quite unusual not to say sabotage)
@@ -31,6 +32,7 @@
     no_local = false, % for amqp consumer setup
     type :: 'sjs', % web socket, long polling, socket-io, sockjs
     user_data_as_auth_host :: undefined | boolean(),
+    hardcoded_auth_url :: list,
     event,
     timer :: reference(), % timer for periodic checks
     timer_idle :: reference(), % timer for idle checks
