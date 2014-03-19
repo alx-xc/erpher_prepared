@@ -138,6 +138,10 @@
                     {rewrite, 0}
                 ]
             }
+        ]},
+        {estat, [
+                {stat_limit_cnt_h, 32}, % hours
+                {stat_limit_cnt_m, 60} % minutes
         ]}
     ]},
     {eworkman, [
@@ -216,6 +220,7 @@
             {economize, memory}, % memory, cpu
             {deep_memory_economize, true}, % call gc
             {user_data_as_auth_host, true}, % user field of url as auth host
+            {hardcoded_auth_url, undefined}, % force authorization url (like 'http://127.0.0.1/ecomet/auth')
             {idle_timeout0, 3600}, % seconds. Idle (no any data) time before exit
             {auth_recheck_interval, 121}, % seconds
             {qmax_dur, 600200100}, % microseconds
@@ -227,7 +232,6 @@
                     {rb_msg, 0}, % rabbit messages
                     {web_msg, 0}, % web messages
                     {ws, 0}, % web socket
-                    {lp, 0}, % long poll
                     {http, 0}, % http request, response
                     {run, 1}
                 ]
@@ -254,7 +258,7 @@
         {stat_limit_n, 101}, % amount
         {stat_limit_t, 123}, % seconds
         {stat_limit_cnt_h, 26}, % hours
-        {stat_limit_cnt_m, 62}, % minutes
+        {stat_limit_cnt_m, 5}, % minutes
         {storage_on, false},
         {storage_base, "var/lib/erpher/estat/es"},
 %        {rt_info_file, "var/lib/erpher/rt_info.dat"},
