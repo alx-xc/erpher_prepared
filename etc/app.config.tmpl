@@ -138,6 +138,10 @@
                     {rewrite, 0}
                 ]
             }
+        ]},
+        {estat, [
+                {stat_limit_cnt_h, 32}, % hours
+                {stat_limit_cnt_m, 60} % minutes
         ]}
     ]},
     {eworkman, [
@@ -254,7 +258,7 @@
         {stat_limit_n, 101}, % amount
         {stat_limit_t, 123}, % seconds
         {stat_limit_cnt_h, 26}, % hours
-        {stat_limit_cnt_m, 62}, % minutes
+        {stat_limit_cnt_m, 5}, % minutes
         {storage_on, false},
         {storage_base, "var/lib/erpher/estat/es"},
 %        {rt_info_file, "var/lib/erpher/rt_info.dat"},
