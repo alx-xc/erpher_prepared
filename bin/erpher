@@ -57,6 +57,13 @@ APP_VSN=${START_ERL#* }
 ERTS_PATH=`grep '^-erts ' $RUNNER_ETC_DIR/vm.args`
 if [ -z "$ERTS_PATH" ]; then
     ERTS_PATH=$RUNNER_BASE_DIR/erts-$ERTS_VSN/bin
+elif echo "$ERTS_PATH" | grep -q "max-version"; then
+    LAST_ERTS_PATH="$(find /usr/lib/erlang -maxdepth 1 -name "erts-*" | sort —version-sort -r | head -n 1)"
+    if [ -z "$LAST_ERTS_PATH" ]; then
+        echo "Can not find erlang in /usr/lib/erlang"
+        exit 1
+    fi
+    ERTS_PATH=$LAST_ERTS_PATH/bin
 else
     echo "$ERTS_PATH" | grep '*' > /dev/null
     if [ $? == 0 ]; then
