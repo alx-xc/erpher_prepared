@@ -217,10 +217,10 @@
             ]
         },
         {auth, [
-            {http_connect_timeout, 5000},
-            {http_timeout, 10000},
+            {http_connect_timeout, 1000},
+            {http_timeout, 5000},
             {use_cache, true},
-            {cache_lt, 300}, % cache lifetime, s
+            {cache_lt, 60}, % cache lifetime, s
             {cache_gc_interval, 600} % interval for running garbage collector, s
         ]},
         {child_config, [
@@ -229,7 +229,7 @@
             {user_data_as_auth_host, true}, % user field of url as auth host
             {hardcoded_auth_url, undefined}, % force authorization url (like 'http://127.0.0.1/ecomet/auth')
             {idle_timeout0, 3600}, % seconds. Idle (no any data) time before exit
-            {auth_recheck_interval, 121}, % seconds
+            {auth_recheck_interval, 300}, % seconds
             {qmax_dur, 600200100}, % microseconds
             {qmax_len, 500},
             {possible_push_keys, <<"^cspush_">>}, % pattern of possible routing keys for socket to amqp push
