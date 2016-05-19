@@ -25,7 +25,8 @@
     debug = []           :: list(),
     delay = 0 :: non_neg_integer(),
     retry = true :: true|false,
-    error_mail :: list()
+    error_mail :: list(),
+    error_mail_cmd :: binary()
 }).
 
 -endif.

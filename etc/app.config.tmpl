@@ -47,7 +47,10 @@
             {http_connect_timeout, 15001},
             {http_timeout, 3600001},
             {max_children, 4}, % default group
-%            {error_mail, [<<"mail@example.test">>]},
+%			{error_mail, [<<"admin@localhost">>]},
+			{error_mail, [<<"alx@localhost">>]},
+			{error_mail_cmd, <<"echo 'Subject: {{subject}}\n\n{{body}}' | sendmail {{mail}} &">>},
+%			{error_mail_cmd, <<"echo '{{body}}' | mail -s '{{subject}}' {{mail}} &">>},
             {job_groups, [
                 [
                     {name, <<"sdf.reminder">>},
