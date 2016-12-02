@@ -14,7 +14,7 @@
         {dir, "var/lib/erpher/mnesia/rabbit-erpher"}
     ]},
     {sasl, [
-        {sasl_error_logger, {file,"var/log/erpher/sasl.log"}},
+        {sasl_error_logger, false}, % {file,"var/log/erpher/sasl.log"}
         {errlog_type, error}
 %        {error_logger_mf_dir, "var/log/erpher/sasl"},      % Log directory
 %        {error_logger_mf_maxbytes, 10485760},   % 10 MB max file size
@@ -125,7 +125,7 @@
                     {job, 0}, % 3 for log params, 5 for log auth data, 0 for production
                     {job_result, 1},
                     {job_queue, 2},
-                    {http, 3},
+                    {http, 3}, % log query result: 2 for errors, 3 for short log status 200, more for extended logging
                     {config, 0},
                     {rewrite, 0}
             ]}
@@ -261,7 +261,7 @@
     ]}, % ecomet server
     {erpher_rt_stat, [
         {web_server, [
-            {port, 8143}
+            {port, 8143} % false for disable
         ]},
         {jit_log, false}, % enable jit log
         {stat_limit_n, 101}, % amount
